@@ -1,10 +1,5 @@
 import PropTypes from 'prop-types';
-// import s from './CastList.module.css';
-import {
-  DataList,
-  ListItem,
-  ListImg,
-} from "./CastList.styled";
+import { DataList, ListItem, ListImg, ListInfo } from './CastList.styled';
 
 const CastList = ({ cast }) => {
   return (
@@ -12,12 +7,19 @@ const CastList = ({ cast }) => {
       <DataList>
         {cast.map(actor => (
           <ListItem key={actor.id}>
-            <span>Actor: {actor.name}</span>
             <ListImg
               src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`}
               alt="NO FOTO"
             />
-            <span>Character: {actor.character}</span>
+            <ListInfo>
+              <p>
+                Actor: <span> {actor.name}</span>
+              </p>
+
+              <p>
+                Character:<span> {actor.character}</span>
+              </p>
+            </ListInfo>
           </ListItem>
         ))}
       </DataList>

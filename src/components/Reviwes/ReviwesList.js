@@ -1,29 +1,57 @@
 import PropTypes from 'prop-types';
-import styled from "styled-components";
+import styled from 'styled-components';
 
-
-const Item= styled.li`
- margin-bottom: 20px;
-
+const ReviewsWrapper = styled.ul`
+  padding: 15px;
 `;
-const ItemSpan= styled.span`
-font-weight: 400;
-  font-size: 19px;
+
+const Item = styled.li`
+  margin-bottom: 50px;
 `;
+
+const ItemTitle = styled.h3`
+  font-weight: 500;
+  color: #e38282;
+  span {
+    color: #707070;
+    font-weight: 400;
+    margin-right: 10px;
+  }
+`;
+
+const ItemSpan = styled.p`
+  margin-bottom: 30px;
+  color: #fff;
+  font-weight: 300;
+  letter-spacing: 1.2;
+  text-align: justify;
+
+  span {
+    font-weight: 400;
+    display: block;
+    font-size: 19px;
+    color: #707070;
+    padding-bottom: 10px;
+  }
+`;
+
 const ReviewsList = ({ reviews }) => {
   return (
     <>
-      <ul>
+      <ReviewsWrapper>
         {reviews.map(review => (
           <Item key={review.id}>
-            <h3>Author: {review.author}</h3>
-            <p>
-              <ItemSpan>Review: </ItemSpan>
+            <ItemTitle>
+              <span>Author:</span> {review.author}
+            </ItemTitle>
+
+            <ItemSpan>
+              <span>Review: </span>
               {review.content}
-            </p>
+            </ItemSpan>
           </Item>
         ))}
-      </ul>
+      </ReviewsWrapper>
     </>
   );
 };

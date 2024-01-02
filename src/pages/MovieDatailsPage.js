@@ -1,13 +1,22 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
+import styled from '@emotion/styled';
 
 import PageTitle from '../components/PageTitle';
 import Container from '../components/Container';
-import Button from '../components/Container';
+import Button from '../components/Button';
 
 import { getMovieById } from '../servises/api';
 import MovieInfoDetails from '../components/MovieInfo/MovieInfoDetails';
 import FullMovieInfo from '../components/FullMovieInfo/FullMovieInfo';
+// import { Title } from 'components/MovieInfo/MovieInfoDetails.styled';
+
+const TitleWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+`;
 
 const MovieDetailsPage = () => {
   const param = useParams();
@@ -35,8 +44,11 @@ const MovieDetailsPage = () => {
 
   return (
     <Container>
-      <PageTitle title={'Movie Details'} />
-      <Button onBackClick={returnBack} />
+      <TitleWrapper>
+        <PageTitle title={'Movie Details'} />
+        <Button onBackClick={returnBack} />
+      </TitleWrapper>
+
       {movie === null ? <p>...Loading</p> : <MovieInfoDetails movie={movie} />}
       <hr />
       <FullMovieInfo />

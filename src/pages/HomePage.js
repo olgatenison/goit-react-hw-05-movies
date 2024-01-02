@@ -16,7 +16,7 @@ const HomePage = () => {
 
   return (
     <Container>
-      <PageTitle title={'Trending today 🔥'} />
+      <PageTitle title={'Trending today '} />
       {movies === null ? <p>Loading...</p> : <MovieList movies={movies} />}
     </Container>
   );

@@ -1,113 +1,106 @@
-# React homework template
+<p align="center">
+     <img src="assets/01.jpg" width="700" alt="Project Preview">
+</p>
 
-Этот проект был создан при помощи
-[Create React App](https://github.com/facebook/create-react-app). Для знакомства
-и настройки дополнительных возможностей
-[обратись к документации](https://facebook.github.io/create-react-app/docs/getting-started).
+# React Movies
 
-## Создание репозитория по шаблону
+[Live Demo](https://olgatenison.github.io/goit-react-hw-05-movies/)
 
-Используй этот репозиторий организации GoIT как шаблон для создания репозитория
-своего проекта. Для этого нажми на кнопку `«Use this template»` и выбери опцию
-`«Create a new repository»`, как показано на изображении.
+This project is a React application for searching and displaying movie
+information. It uses the themoviedb.org API to fetch data about movies, actors,
+and reviews.
 
-![Creating repo from a template step 1](./assets/template-step-1.png)
+## Project Structure
 
-На следующем шаге откроется страница создания нового репозитория. Заполни поле
-его имени, убедись что репозиторий публичный, после чего нажми кнопку
-`«Create repository from template»`.
+The project is structured as follows:
 
-![Creating repo from a template step 2](./assets/template-step-2.png)
+- **`src/`**: The source code of the React application.
+  - **`components/`**: Reusable UI components.
+    - **`Appbar.js`**: The top-level application bar.
+    - **`Button.js`**: A button component.
+    - **`Container.js`**: A container component for layout structure.
+    - **`Navigation.js`**: Navigation component.
+    - **`Searchbar.js`**: Search bar component.
+    - **`PageTitle.js`**: Page title component.
+    - **`MovieList.js`**: Component for displaying a list of movies.
+    - **`MovieInfo/`**: Components related to movie information.
+      - **`MovieInfoDetails.js`**: Component for displaying detailed movie
+        information.
+  - **`pages/`**: React components representing different pages of the
+    application.
+    - **`HomePage.js`**: Home page with trending movies.
+    - **`MoviesPage.js`**: Page for searching and displaying movies.
+    - **`MovieDetailsPage.js`**: Page for displaying detailed information about
+      a specific movie.
+      - **`Cast.js`**: Component for displaying information about the cast.
+      - **`Reviews.js`**: Component for displaying movie reviews.
+      - **`FullMovieInfo.js`**: Component for displaying full movie information.
+  - **`services/`**: Functions for interacting with the themoviedb.org API.
+    - **`api.js`**: API functions for fetching movie data.
 
-После того как репозиторий будет создан, необходимо перейти в настройки
-созданного репозитория на вкладку `Settings` > `Actions` > `General` как
-показано на изображении.
+<p align="center">
+     <img src="assets/02.jpg" width="700" alt="Project Preview">
+</p>
 
-![Settings GitHub Actions permissions step 1](./assets/gh-actions-perm-1.png)
+<p align="center">
+     <img src="assets/03.jpg" width="700" alt="Project Preview">
+</p>
 
-Проскролив страницу до самого конца, в секции `«Workflow permissions»` выбери
-опцию `«Read and write permissions»` и поставь галочку в чекбоксе. Это
-необходимо для автоматизации процесса деплоя проекта.
+## Project Requirements
 
-![Settings GitHub Actions permissions step 2](./assets/gh-actions-perm-2.png)
+### Acceptance Criteria
 
-Теперь у тебя есть личный репозиторий проекта, со структурой файлов и папок
-репозитория-шаблона. Далее работай с ним как с любым другим личным репозиторием,
-клонируй его себе на компьютер, пиши код, делай коммиты и отправляй их на
-GitHub.
+- Use this
+  [React Homework Template](https://github.com/goitacademy/react-homework-template#readme)
+  as a starting point for your program.
+- Create a repository named `goit-react-hw-05-movies`.
+- Provide a link to the source files and working pages of each project on GitHub
+  Pages.
+- Components store the minimal necessary set of data in their state; the rest is
+  computed.
+- No errors or warnings appear in the console during the execution of the
+  assignment code.
+- Each component has a separate folder with a React component file and a styles
+  file.
+- Everything a component expects as props is passed to it during the call.
+- Component names are clear and descriptive.
+- JS code is clean and understandable, using Prettier.
+- Styling is done with CSS modules or Styled Components.
 
-## Подготовка к работе
+### themoviedb.org API
 
-1. Убедись что на компьютере установлена LTS-версия Node.js.
-   [Скачай и установи](https://nodejs.org/en/) её если необходимо.
-2. Установи базовые зависимости проекта командой `npm install`.
-3. Запусти режим разработки, выполнив команду `npm start`.
-4. Перейди в браузере по адресу [http://localhost:3000](http://localhost:3000).
-   Эта страница будет автоматически перезагружаться после сохранения изменений в
-   файлах проекта.
+- Use the themoviedb.org API for the backend. Register (you can enter any data)
+  and obtain an API key.
+- The following endpoints will be used in this task:
+  - `/trending/get-trending`: List of today's most popular movies to create a
+    collection on the main page.
+  - `/search/search-movies`: Movie search by keyword on the movies page.
+  - `/movies/get-movie-details`: Request for full information about a movie for
+    the movie details page.
+  - `/movies/get-movie-credits`: Request for information about the cast for the
+    movie details page.
+  - `/movies/get-movie-reviews`: Request for reviews for the movie details page.
 
-## Деплой
+### Documentation Links
 
-Продакшн версия проекта будет автоматически проходить линтинг, собираться и
-деплоиться на GitHub Pages, в ветку `gh-pages`, каждый раз когда обновляется
-ветка `main`. Например, после прямого пуша или принятого пул-реквеста. Для этого
-необходимо в файле `package.json` отредактировать поле `homepage`, заменив
-`your_username` и `your_repo_name` на свои, и отправить изменения на GitHub.
+<p align="center">
+     <img src="assets/04.jpg" width="700" alt="Project Preview">
+</p>
 
-```json
-"homepage": "https://your_username.github.io/your_repo_name/"
-```
+#### Routes
 
-Далее необходимо зайти в настройки GitHub-репозитория (`Settings` > `Pages`) и
-выставить раздачу продакшн версии файлов из папки `/root` ветки `gh-pages`, если
-это небыло сделано автоматически.
+- The application should have the following routes. If a user enters a
+  nonexistent route, they should be redirected to the home page.
+  - `/`: Home component, home page with a list of popular movies.
+  - `/movies`: Movies component, page for searching movies by keyword.
+  - `/movies/:movieId`: MovieDetails component, page with detailed information
+    about a movie.
+    - `/movies/:movieId/cast`: Cast component, information about the cast.
+      Rendered on the MovieDetails page.
+    - `/movies/:movieId/reviews`: Reviews component, information about reviews.
+      Rendered on the MovieDetails page.
 
-![GitHub Pages settings](./assets/repo-settings.png)
+#### Code Splitting
 
-### Статус деплоя
-
-Статус деплоя крайнего коммита отображается иконкой возле его идентификатора.
-
-- **Желтый цвет** - выполняется сборка и деплой проекта.
-- **Зеленый цвет** - деплой завершился успешно.
-- **Красный цвет** - во время линтинга, сборки или деплоя произошла ошибка.
-
-Более детальную информацию о статусе можно посмотреть кликнув по иконке, и в
-выпадающем окне перейти по ссылке `Details`.
-
-![Deployment status](./assets/deploy-status.png)
-
-### Живая страница
-
-Через какое-то время, обычно пару минут, живую страницу можно будет посмотреть
-по адресу указанному в отредактированном свойстве `homepage`. Например, вот
-ссылка на живую версию для этого репозитория
-[https://goitacademy.github.io/react-homework-template](https://goitacademy.github.io/react-homework-template).
-
-Если открывается пустая страница, убедись что во вкладке `Console` нет ошибок
-связанных с неправильными путями к CSS и JS файлам проекта (**404**). Скорее
-всего у тебя неправильное значение свойства `homepage` в файле `package.json`.
-
-### Маршрутизация
-
-Если приложение использует библиотеку `react-router-dom` для маршрутизации,
-необходимо дополнительно настроить компонент `<BrowserRouter>`, передав в пропе
-`basename` точное название твоего репозитория. Слеш в начале строки обязателен.
-
-```jsx
-<BrowserRouter basename="/your_repo_name">
-  <App />
-</BrowserRouter>
-```
-
-## Как это работает
-
-![How it works](./assets/how-it-works.png)
-
-1. После каждого пуша в ветку `main` GitHub-репозитория, запускается специальный
-   скрипт (GitHub Action) из файла `.github/workflows/deploy.yml`.
-2. Все файлы репозитория копируются на сервер, где проект инициализируется и
-   проходит линтинг и сборку перед деплоем.
-3. Если все шаги прошли успешно, собранная продакшн версия файлов проекта
-   отправляется в ветку `gh-pages`. В противном случае, в логе выполнения
-   скрипта будет указано в чем проблема.
+- Add asynchronous loading of JS code for application routes using React.lazy()
+  and Suspense.
