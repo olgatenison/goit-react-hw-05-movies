@@ -3,9 +3,9 @@ import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Appbar from './components/Appbar';
-import Cast from './components/Cast/Cast';
-import Reviews from './components/Reviwes/Reviwes';
 
+const Cast = lazy(() => import('./components/Cast/Cast'));
+const Reviews = lazy(() => import('./components/Reviwes/Reviwes'));
 const HomePage = lazy(() => import('./pages/HomePage'));
 const MoviesPage = lazy(() => import('./pages/MoviesPage'));
 const MovieDetailsPage = lazy(() => import('./pages/MovieDatailsPage'));
@@ -17,11 +17,14 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Appbar />}>
             <Route index element={<HomePage />} />
+
             <Route path="movies" element={<MoviesPage />} />
+
             <Route path="movies/:movieID" element={<MovieDetailsPage />}>
               <Route path="cast" element={<Cast />} />
               <Route path="reviews" element={<Reviews />} />
             </Route>
+            <Route path="*" element={<HomePage />} />
           </Route>
         </Routes>
       </Suspense>
